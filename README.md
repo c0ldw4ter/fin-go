@@ -84,12 +84,12 @@ curl -X POST http://localhost:8080/api/v1/users/1/topup \
 
 - **Пример использования:**
 
-````bash
+```bash
 curl -X POST http://localhost:8080/api/v1/users/1/topup \
 -H "Content-Type: application/json" \
 -d '{"amount": 100.0}'
 
-
+```
 
 ### 3. Получение последних транзакций пользователя
 
@@ -103,11 +103,11 @@ curl -X POST http://localhost:8080/api/v1/users/1/topup \
 - **URL-параметр:**
   - `user_id` (integer) — идентификатор пользователя, чей баланс нужно пополнить.
 - **Тело запроса (JSON):**
-  ```json
+```json
   {
     "amount": 100.0
   }
-````
+```
 
 - `amount` (float) — сумма для пополнения баланса. Должна быть положительным числом.
 
