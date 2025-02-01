@@ -1,29 +1,42 @@
 # fin-go
 
-### API Documentation
+## API Documentation
 
-- 1. Пополнение баланса пользователя
+### 1. Пополнение баланса пользователя
 
-     - POST /api/v1/users/:user_id/topup
+- **Эндпоинт:**
+  POST /api/v1/users/:user_id/topup
 
-     - Позволяет пополнить баланс пользователя с указанным user_id на заданную сумму
+- **Описание:**
+Позволяет пополнить баланс пользователя с указанным `user_id` на заданную сумму.
 
-     - Успешный ответ (HTTP 200):
+- **Параметры запроса:**
+- **URL-параметр:**
+  - `user_id` (integer) — идентификатор пользователя, чей баланс нужно пополнить.
+- **Тело запроса (JSON):**
+  ```json
+  {
+    "amount": 100.0
+  }
+  ```
+  - `amount` (float) — сумма для пополнения баланса. Должна быть положительным числом.
 
-`"message": "balance topped up successfully"`
-    - Ошибка (HTTP 400 или 500):
-  {`"error": "failed to update user balance: user not found"` }
-  
+- **Ответы:**
+- **Успешный ответ (HTTP 200):**
+  ```json
+  {
+    "message": "balance topped up successfully"
+  }
+  ```
+- **Ошибка (HTTP 400 или 500):**
+  ```json
+  {
+    "error": "failed to update user balance: user not found"
+  }
+  ```
 
-    - Пример:
-
-```
+- **Пример использования:**
+```bash
 curl -X POST http://localhost:8080/api/v1/users/1/topup \
 -H "Content-Type: application/json" \
 -d '{"amount": 100.0}'
-
-```
-
-```
-
-```
