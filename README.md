@@ -40,11 +40,11 @@
 
 - **Пример использования:**
 
-````bash
+```bash
 curl -X POST http://localhost:8080/api/v1/users/1/topup \
 -H "Content-Type: application/json" \
 -d '{"amount": 100.0}'
-
+```
 
 ### 2. Перевод средств между пользователями
 
@@ -52,7 +52,7 @@ curl -X POST http://localhost:8080/api/v1/users/1/topup \
   POST /api/v1/transactions/transfer
 
 - **Описание:**
-Позволяет пополнить баланс пользователя с указанным `user_id` на заданную сумму.
+  Позволяет пополнить баланс пользователя с указанным `user_id` на заданную сумму.
 
 - **Параметры запроса:**
 - **URL-параметр:**
@@ -60,9 +60,11 @@ curl -X POST http://localhost:8080/api/v1/users/1/topup \
 - **Тело запроса (JSON):**
   ```json
   {
-    "amount": 100.0
+  	"amount": 100.0
   }
-````
+  ```
+
+`````
 
 - `amount` (float) — сумма для пополнения баланса. Должна быть положительным числом.
 
@@ -106,7 +108,7 @@ curl -X POST http://localhost:8080/api/v1/users/1/topup \
   {
     "amount": 100.0
   }
-````
+`````
 
 - `amount` (float) — сумма для пополнения баланса. Должна быть положительным числом.
 
